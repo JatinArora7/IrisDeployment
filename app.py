@@ -1,7 +1,7 @@
 # import Flask class from the flask module
 from flask import Flask, request, render_template
 import flask
-from sklearn.externals import joblib
+import joblib
 import numpy as np
 import pickle
 # Create Flask object to run
