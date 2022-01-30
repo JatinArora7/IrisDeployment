@@ -1,7 +1,7 @@
 # import Flask class from the flask module
 from flask import Flask, request, render_template
 import flask
-import joblib
+from sklearn.externals import joblib
 import numpy as np
 import pickle
 # Create Flask object to run
@@ -19,7 +19,7 @@ def ValuePredictor(to_predict_list):
     return result
 
 
-@app.route('/result', methods= ['POST'])
+@app.route('/predict', methods= ['POST'])
 def predict():
     if request.method == 'POST':
         to_predict_list = request.form.to_dict()
@@ -27,7 +27,7 @@ def predict():
         to_predict_list = list(map(int, to_predict_list))
         results = ValuePredictor(to_predict_list)
 
-        return render_template('result.html', prediction_text='Predicted Iris Class {}'.format(results))
+        return render_template('index.html', prediction_text='Predicted Iris Class {}'.format(results))
     else:
         return render_template('index.html')
 
