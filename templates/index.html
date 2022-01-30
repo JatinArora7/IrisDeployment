@@ -19,7 +19,7 @@
  <div class="login">
 	<h1 style="text-align:center">IRIS</h1>
 
-    <form align="center" action="/result" method="post">
+    <form align="center" action="/predict" method="post">
     	<input type="text" style="text-align:center" name="sepal_length" placeholder="1. sepal_length" required="required" />
         <br>
         <input type="text" style="text-align:center" name="sepal_width" placeholder="2. sepal_length" required="required" />
@@ -35,7 +35,9 @@
 
    <br>
    <br>
-   
+    
+   {{ prediction_text }}   
+
  </div>
 
 
